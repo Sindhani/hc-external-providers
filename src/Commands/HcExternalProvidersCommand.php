@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Sindhani\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class HcExternalProvidersCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'install';
 
     public $description = 'My command';
 

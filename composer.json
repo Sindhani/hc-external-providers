@@ -1,22 +1,22 @@
 {
-    "name": ":vendor_slug/:package_slug",
+    "name": "sindhani/hc-external-providers",
     "description": ":package_description",
     "keywords": [
-        ":vendor_name",
+        "sindhani",
         "laravel",
-        ":package_slug"
+        "hc-external-providers"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/sindhani/hc-external-providers",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Waheed Sindhani",
+            "email": "waheed.eliccs@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.0",
         "spatie/laravel-package-tools": "^1.16",
         "illuminate/contracts": "^10.0||^11.0"
     },
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Sindhani\\": "src/",
+            "Sindhani\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Sindhani\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
