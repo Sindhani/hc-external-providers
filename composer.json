@@ -62,10 +62,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sindhani\\HcExternalProviders\\HcExternalProvidersServiceProvider"
+                "Sindhani\\HcExternalProvidersServiceProvider"
             ],
             "aliases": {
-                "HcExternalProviders": "Sindhani\\HcExternalProviders\\Facades\\HcExternalProviders"
+                "HcExternalProviders": "Sindhani\\Facades\\HcExternalProviders"
             }
         }
     },
