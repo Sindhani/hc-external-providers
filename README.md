@@ -23,13 +23,6 @@ You can install the package via composer:
 composer require sindhani/hc-external-providers
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="hc-external-providers-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -40,20 +33,16 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'base_url' => env('hc_external_providers_base_url'),
+    'api_token' => env('hc_external_providers_api_token')
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="hc-external-providers-views"
 ```
 
 ## Usage
 
 ```php
 $hcExternalProviders = new Sindhani\HcExternalProviders();
-echo $hcExternalProviders->echoPhrase('Hello, Sindhani!');
+echo $hcExternalProviders->getAllUsers();
 ```
 
 ## Testing
