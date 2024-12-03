@@ -6,15 +6,13 @@ use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sindhani\Resources\GetAllPokemon;
-use Sindhani\Resources\GetSinglePokemon;
 use Sindhani\Users\Requests\DeleteUser;
 use Sindhani\Users\Requests\GetAllUsers;
 use Sindhani\Users\Requests\GetSingleUser;
 use Sindhani\Users\Requests\StoreUser;
 use Sindhani\Users\Requests\UpdateUser;
 
-class UserResource  extends BaseResource
+class UserResource extends BaseResource
 {
     /**
      * @throws FatalRequestException
@@ -38,7 +36,7 @@ class UserResource  extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function store(array $data):Response
+    public function store(array $data): Response
     {
         return $this->connector->send(new StoreUser($data));
     }
@@ -47,7 +45,7 @@ class UserResource  extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function update(int $id, array $data):Response
+    public function update(int $id, array $data): Response
     {
         return $this->connector->send(new UpdateUser($id, $data));
     }
@@ -56,7 +54,7 @@ class UserResource  extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function delete(int $id):Response
+    public function delete(int $id): Response
     {
         return $this->connector->send(new DeleteUser($id));
     }

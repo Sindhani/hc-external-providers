@@ -2,7 +2,4 @@
 
 namespace Sindhani\Exceptions;
 
-class NoTokenFoundException extends \Exception
-{
-
-}
+class NoTokenFoundException extends \Exception {}

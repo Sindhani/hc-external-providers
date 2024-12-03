@@ -2,7 +2,6 @@
 
 namespace Sindhani\Users\Requests;
 
-use phpDocumentor\Reflection\DocBlock\Tags\PropertyRead;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -11,18 +10,17 @@ use Saloon\Traits\Body\HasJsonBody;
 class StoreUser extends Request implements HasBody
 {
     use HasJsonBody;
-    protected Method $method = Method::POST;
-    public function __construct(private array $data)
-    {
-    }
 
+    protected Method $method = Method::POST;
+
+    public function __construct(private array $data) {}
 
     public function resolveEndpoint(): string
     {
         return '/users/';
     }
 
-    public function defaultBody():array
+    public function defaultBody(): array
     {
         return $this->data;
     }

@@ -14,7 +14,7 @@ class HcExternalProviders extends Connector
     {
         $this->token = $this->token ?? config('hc-external-providers.api_token', null);
 
-        if (!$this->token) {
+        if (! $this->token) {
             throw new NoTokenFoundException(
                 message: 'No API token found. Please provide a token directly or configure it in the environment file.',
                 code: Response::HTTP_BAD_REQUEST
@@ -26,6 +26,7 @@ class HcExternalProviders extends Connector
     {
         return new UserResource($this);
     }
+
     public function resolveBaseUrl(): string
     {
         return config('hc-external-providers.base_url');

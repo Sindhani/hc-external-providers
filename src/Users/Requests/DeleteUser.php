@@ -8,13 +8,11 @@ use Saloon\Http\Request;
 class DeleteUser extends Request
 {
     protected Method $method = Method::DELETE;
-    public function __construct(private int $id)
-    {
-    }
 
+    public function __construct(private int $id) {}
 
     public function resolveEndpoint(): string
     {
-        return '/users/'. $this->id;
+        return '/users/'.$this->id;
     }
 }
