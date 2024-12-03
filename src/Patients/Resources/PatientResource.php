@@ -6,11 +6,13 @@ use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sindhani\Patients\Requests\DeletePatientReport;
-use Sindhani\Patients\Requests\GetAllPatientReports;
-use Sindhani\Patients\Requests\GetSingleUser;
-use Sindhani\Patients\Requests\StorePatientReport;
-use Sindhani\Patients\Requests\UpdatePatientReport;
+use Sindhani\PatientReports\Requests\GetAllPatientReports;
+use Sindhani\PatientReports\Requests\StorePatientReport;
+use Sindhani\PatientReports\Requests\UpdatePatientReport;
+use Sindhani\Patients\Requests\DeletePatient;
+use Sindhani\Patients\Requests\GetAllPatients;
+use Sindhani\Patients\Requests\StorePatient;
+use Sindhani\Patients\Requests\UpdatePatient;
 
 class PatientResource extends BaseResource
 {
@@ -20,17 +22,10 @@ class PatientResource extends BaseResource
      */
     public function all(int $page = 1): Response
     {
-        return $this->connector->send(new GetAllPatientReports($page));
+        return $this->connector->send(new GetAllPatients($page));
     }
 
-    /**
-     * @throws FatalRequestException
-     * @throws RequestException
-     */
-    public function find(int $id): Response
-    {
-        return $this->connector->send(new GetSingleUser($id));
-    }
+
 
     /**
      * @throws FatalRequestException
@@ -38,7 +33,7 @@ class PatientResource extends BaseResource
      */
     public function store(array $data): Response
     {
-        return $this->connector->send(new StorePatientReport($data));
+        return $this->connector->send(new StorePatient($data));
     }
 
     /**
@@ -47,7 +42,7 @@ class PatientResource extends BaseResource
      */
     public function update(int $id, array $data): Response
     {
-        return $this->connector->send(new UpdatePatientReport($id, $data));
+        return $this->connector->send(new UpdatePatient($id, $data));
     }
 
     /**
@@ -56,6 +51,6 @@ class PatientResource extends BaseResource
      */
     public function delete(int $id): Response
     {
-        return $this->connector->send(new DeletePatientReport($id));
+        return $this->connector->send(new DeletePatient($id));
     }
 }
