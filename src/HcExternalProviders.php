@@ -6,6 +6,8 @@ use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
 use Sindhani\Exceptions\BaseUrlMissingException;
 use Sindhani\Exceptions\NoTokenFoundException;
+use Sindhani\PatientReports\Resources\PatientReportResource;
+use Sindhani\Patients\Resources\PatientResource;
 use Sindhani\Users\Resources\UserResource;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -27,7 +29,18 @@ class HcExternalProviders extends Connector
     {
         return new UserResource($this);
     }
+    public function patients():PatientResource
+    {
+        return new PatientResource($this);
+    }
+    public function patientReports(): PatientReportResource
+    {
+        return new PatientReportResource($this);
+    }
 
+    /**
+     * @throws BaseUrlMissingException
+     */
     public function resolveBaseUrl(): string
     {
         if (! config('hc-external-providers.base_url')) {
