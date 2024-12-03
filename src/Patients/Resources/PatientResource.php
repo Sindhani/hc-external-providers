@@ -6,9 +6,6 @@ use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sindhani\PatientReports\Requests\GetAllPatientReports;
-use Sindhani\PatientReports\Requests\StorePatientReport;
-use Sindhani\PatientReports\Requests\UpdatePatientReport;
 use Sindhani\Patients\Requests\DeletePatient;
 use Sindhani\Patients\Requests\GetAllPatients;
 use Sindhani\Patients\Requests\StorePatient;
@@ -24,8 +21,6 @@ class PatientResource extends BaseResource
     {
         return $this->connector->send(new GetAllPatients($page));
     }
-
-
 
     /**
      * @throws FatalRequestException
