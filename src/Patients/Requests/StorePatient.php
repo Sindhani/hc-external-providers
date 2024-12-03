@@ -17,7 +17,7 @@ class StorePatient extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return '/patients/';
+        return '/patients';
     }
 
     public function defaultBody(): array
