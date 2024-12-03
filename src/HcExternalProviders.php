@@ -4,6 +4,7 @@ namespace Sindhani;
 
 use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
+use Sindhani\Exceptions\BaseUrlMissingException;
 use Sindhani\Exceptions\NoTokenFoundException;
 use Sindhani\Users\Resources\UserResource;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,6 +30,12 @@ class HcExternalProviders extends Connector
 
     public function resolveBaseUrl(): string
     {
+        if (! config('hc-external-providers.base_url')) {
+            throw new BaseUrlMissingException(
+               message: 'No base URL configured. Please set the `base_url` in your configuration or environment file.',
+                code: Response::HTTP_BAD_REQUEST
+            );
+        }
         return config('hc-external-providers.base_url');
     }
 

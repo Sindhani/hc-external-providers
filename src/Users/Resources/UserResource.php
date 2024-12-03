@@ -18,7 +18,7 @@ class UserResource extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function all(int $page): Response
+    public function all(int $page = 1): Response
     {
         return $this->connector->send(new GetAllUsers($page));
     }
