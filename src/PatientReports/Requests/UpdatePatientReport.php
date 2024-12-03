@@ -13,7 +13,7 @@ class UpdatePatientReport extends Request implements HasBody
 
     protected Method $method = Method::PATCH;
 
-    public function __construct(private int $patientId,private int $reportId , private array $data) {}
+    public function __construct(private int $patientId, private int $reportId, private array $data) {}
 
     public function resolveEndpoint(): string
     {

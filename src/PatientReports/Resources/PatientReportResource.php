@@ -14,14 +14,13 @@ use Sindhani\Patients\Requests\GetSingleUser;
 
 class PatientReportResource extends BaseResource
 {
-
     /**
      * @throws FatalRequestException
      * @throws RequestException
      */
     public function all(int $page = 1): Response
     {
-        return $this->connector->send(new GetAllPatientReports());
+        return $this->connector->send(new GetAllPatientReports);
     }
 
     /**
@@ -39,7 +38,7 @@ class PatientReportResource extends BaseResource
      */
     public function store(int $patientId, array $data): Response
     {
-        return $this->connector->send(new StorePatientReport(patientId: $patientId, data:  $data));
+        return $this->connector->send(new StorePatientReport(patientId: $patientId, data: $data));
     }
 
     /**
@@ -57,6 +56,6 @@ class PatientReportResource extends BaseResource
      */
     public function delete(int $patientId, int $reportId): Response
     {
-        return $this->connector->send(new DeletePatientReport(patientId:$patientId, reportId: $reportId));
+        return $this->connector->send(new DeletePatientReport(patientId: $patientId, reportId: $reportId));
     }
 }

@@ -29,10 +29,12 @@ class HcExternalProviders extends Connector
     {
         return new UserResource($this);
     }
-    public function patients():PatientResource
+
+    public function patients(): PatientResource
     {
         return new PatientResource($this);
     }
+
     public function patientReports(): PatientReportResource
     {
         return new PatientReportResource($this);
