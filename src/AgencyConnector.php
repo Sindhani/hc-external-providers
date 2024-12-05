@@ -6,13 +6,12 @@ use Saloon\Http\Auth\TokenAuthenticator;
 use Saloon\Http\Connector;
 use Sindhani\Exceptions\BaseUrlMissingException;
 use Sindhani\Exceptions\NoTokenFoundException;
-use Sindhani\Requests\ExternalProvider\ApiClients\Resources\ApiClientResource;
 use Sindhani\Requests\ExternalProvider\PatientReports\Resources\PatientReportResource;
 use Sindhani\Requests\ExternalProvider\Patients\Resources\PatientResource;
 use Sindhani\Requests\ExternalProvider\Users\Resources\UserResource;
 use Symfony\Component\HttpFoundation\Response;
 
-class HcExternalProviders extends Connector
+class AgencyConnector extends Connector
 {
     public function __construct(private ?string $token = null)
     {
@@ -24,16 +23,6 @@ class HcExternalProviders extends Connector
                 code: Response::HTTP_BAD_REQUEST
             );
         }
-    }
-
-    public function users(): UserResource
-    {
-        return new UserResource($this);
-    }
-
-    public function apiClients():ApiClientResource
-    {
-        return new ApiClientResource($this);
     }
 
     public function patients(): PatientResource
