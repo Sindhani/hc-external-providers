@@ -9,6 +9,7 @@ use Sindhani\Exceptions\NoTokenFoundException;
 use Sindhani\Requests\ExternalProvider\ApiClients\Resources\ApiClientResource;
 use Sindhani\Requests\ExternalProvider\PatientReports\Resources\PatientReportResource;
 use Sindhani\Requests\ExternalProvider\Patients\Resources\PatientResource;
+use Sindhani\Requests\ExternalProvider\UserInvitation\Resources\UserInvitationResource;
 use Sindhani\Requests\ExternalProvider\Users\Resources\UserResource;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -34,6 +35,11 @@ class HcExternalProviders extends Connector
     public function apiClients(): ApiClientResource
     {
         return new ApiClientResource($this);
+    }
+
+    public function invitation():UserInvitationResource
+    {
+        return new UserInvitationResource($this);
     }
 
     public function patients(): PatientResource
