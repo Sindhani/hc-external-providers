@@ -8,7 +8,6 @@ use Sindhani\Exceptions\BaseUrlMissingException;
 use Sindhani\Exceptions\NoTokenFoundException;
 use Sindhani\Requests\ExternalProvider\PatientReports\Resources\PatientReportResource;
 use Sindhani\Requests\ExternalProvider\Patients\Resources\PatientResource;
-use Sindhani\Requests\ExternalProvider\Users\Resources\UserResource;
 use Symfony\Component\HttpFoundation\Response;
 
 class AgencyConnector extends Connector

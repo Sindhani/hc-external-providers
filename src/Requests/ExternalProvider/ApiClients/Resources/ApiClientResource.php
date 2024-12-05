@@ -10,10 +10,6 @@ use Sindhani\Requests\ExternalProvider\ApiClients\Requests\DeleteApiClient;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\GetAllApiClients;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\StoreApiClient;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\UpdateApiClient;
-use Sindhani\Requests\ExternalProvider\Patients\Requests\DeletePatient;
-use Sindhani\Requests\ExternalProvider\Patients\Requests\GetAllPatients;
-use Sindhani\Requests\ExternalProvider\Patients\Requests\StorePatient;
-use Sindhani\Requests\ExternalProvider\Patients\Requests\UpdatePatient;
 
 class ApiClientResource extends BaseResource
 {
