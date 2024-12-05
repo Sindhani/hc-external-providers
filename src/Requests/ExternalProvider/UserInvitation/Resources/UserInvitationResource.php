@@ -7,17 +7,9 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
 use Sindhani\Requests\ExternalProvider\UserInvitation\Requests\SendUserInvitation;
-use Sindhani\Requests\ExternalProvider\Users\Requests\DeleteUser;
-use Sindhani\Requests\ExternalProvider\Users\Requests\GetAllUsers;
-use Sindhani\Requests\ExternalProvider\Users\Requests\GetSingleUser;
-use Sindhani\Requests\ExternalProvider\Users\Requests\StoreUser;
-use Sindhani\Requests\ExternalProvider\Users\Requests\UpdateUser;
 
 class UserInvitationResource extends BaseResource
 {
-
-
-
     /**
      * @throws FatalRequestException
      * @throws RequestException
@@ -26,6 +18,4 @@ class UserInvitationResource extends BaseResource
     {
         return $this->connector->send(new SendUserInvitation($data));
     }
-
-
 }
