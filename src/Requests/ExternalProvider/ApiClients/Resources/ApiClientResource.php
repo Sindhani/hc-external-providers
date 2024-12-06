@@ -29,7 +29,7 @@ class ApiClientResource extends BaseResource
      */
     public function getActiveProviders(): Response
     {
-        return $this->connector->send(new GetActiveApiClients());
+        return $this->connector->send(new GetActiveApiClients);
     }
 
     /**
