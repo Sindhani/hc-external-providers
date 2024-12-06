@@ -37,7 +37,7 @@ class HcExternalProviders extends Connector
         return new ApiClientResource($this);
     }
 
-    public function invitation():UserInvitationResource
+    public function invitation(): UserInvitationResource
     {
         return new UserInvitationResource($this);
     }
