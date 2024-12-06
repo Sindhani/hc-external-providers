@@ -7,6 +7,7 @@ use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\DeleteApiClient;
+use Sindhani\Requests\ExternalProvider\ApiClients\Requests\GetActiveApiClients;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\GetAllApiClients;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\StoreApiClient;
 use Sindhani\Requests\ExternalProvider\ApiClients\Requests\UpdateApiClient;
@@ -20,6 +21,15 @@ class ApiClientResource extends BaseResource
     public function all(int $page = 1): Response
     {
         return $this->connector->send(new GetAllApiClients($page));
+    }
+
+    /**
+     * @throws FatalRequestException
+     * @throws RequestException
+     */
+    public function getActiveProviders(): Response
+    {
+        return $this->connector->send(new GetActiveApiClients());
     }
 
     /**
