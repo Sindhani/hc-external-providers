@@ -2,6 +2,7 @@
 
 namespace Sindhani\Requests\ExternalProvider\ApiClients\Resources;
 
+use Illuminate\Http\Request;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
@@ -19,9 +20,15 @@ class ApiClientResource extends BaseResource
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function all(int $page = 1): Response
+    public function all(Request $request): Response
     {
-        return $this->connector->send(new GetAllApiClients($page));
+        return $this->connector->send(new GetAllApiClients(
+            archived: $request->get('archived'),
+            page: $request->get('page'),
+            search: $request->get('search'),
+            sortBy: $request->get('sortBy'),
+            descending: $request->get('descending')
+        ));
     }
 
     /**
