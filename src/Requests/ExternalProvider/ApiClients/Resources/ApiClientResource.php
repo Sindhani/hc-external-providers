@@ -23,11 +23,11 @@ class ApiClientResource extends BaseResource
     public function all(Request $request): Response
     {
         return $this->connector->send(new GetAllApiClients(
-            archived: $request->get('archived'),
-            page: $request->get('page'),
-            search: $request->get('search'),
-            sortBy: $request->get('sortBy'),
-            descending: $request->get('descending')
+            archived: $request->boolean('archived'),
+            page: $request->integer('page'),
+            search: $request->string('search'),
+            sortBy: $request->boolean('sortBy'),
+            descending: $request->boolean('descending')
         ));
     }
 
