@@ -11,8 +11,8 @@ class GetAllApiClients extends Request
     protected Method $method = Method::GET;
 
     public function __construct(
-        private ?bool    $archived = false,
-        private ?int    $page = 1,
+        private ?bool $archived = false,
+        private ?int $page = 1,
         private ?string $search = null,
         private ?string $sortBy = null,
         private ?bool $descending = false,
