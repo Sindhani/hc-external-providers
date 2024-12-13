@@ -10,10 +10,12 @@ use Sindhani\Requests\ExternalProvider\UserInvitation\Requests\SendUserInvitatio
 
 class UserInvitationResource extends BaseResource
 {
+
     /**
      * @throws FatalRequestException
      * @throws RequestException
      */
+
     public function sendInvitation(array $data): Response
     {
         return $this->connector->send(new SendUserInvitation($data));
