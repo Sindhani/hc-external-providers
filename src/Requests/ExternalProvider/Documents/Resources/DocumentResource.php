@@ -12,8 +12,6 @@ use Sindhani\Requests\ExternalProvider\Documents\Requests\UpdateDocument;
 
 class DocumentResource extends BaseResource
 {
-
-
     /**
      * @throws FatalRequestException
      * @throws RequestException
