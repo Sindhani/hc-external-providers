@@ -10,6 +10,7 @@ use Sindhani\Requests\ExternalProvider\ApiClients\Resources\ApiClientResource;
 use Sindhani\Requests\ExternalProvider\PatientReports\Resources\PatientReportResource;
 use Sindhani\Requests\ExternalProvider\Patients\Resources\PatientResource;
 use Sindhani\Requests\ExternalProvider\UserInvitation\Resources\UserInvitationResource;
+use Sindhani\Requests\ExternalProvider\Documents\Resources\DocumentResource;
 use Sindhani\Requests\ExternalProvider\Users\Resources\UserResource;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -30,6 +31,10 @@ class HcExternalProviders extends Connector
     public function users(): UserResource
     {
         return new UserResource($this);
+    }
+    public function documents(): DocumentResource
+    {
+        return new DocumentResource($this);
     }
 
     public function apiClients(): ApiClientResource

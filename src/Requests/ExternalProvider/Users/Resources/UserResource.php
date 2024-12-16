@@ -6,11 +6,11 @@ use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sindhani\Requests\ExternalProvider\Users\Requests\DeleteUser;
+use Sindhani\Requests\ExternalProvider\Users\Requests\DeleteDocument;
 use Sindhani\Requests\ExternalProvider\Users\Requests\GetAllUsers;
 use Sindhani\Requests\ExternalProvider\Users\Requests\GetSingleUser;
-use Sindhani\Requests\ExternalProvider\Users\Requests\StoreUser;
-use Sindhani\Requests\ExternalProvider\Users\Requests\UpdateUser;
+use Sindhani\Requests\ExternalProvider\Users\Requests\StoreDocument;
+use Sindhani\Requests\ExternalProvider\Users\Requests\UpdateDocument;
 
 class UserResource extends BaseResource
 {
@@ -38,7 +38,7 @@ class UserResource extends BaseResource
      */
     public function store(array $data): Response
     {
-        return $this->connector->send(new StoreUser($data));
+        return $this->connector->send(new StoreDocument($data));
     }
 
     /**
@@ -47,7 +47,7 @@ class UserResource extends BaseResource
      */
     public function update(int $id, array $data): Response
     {
-        return $this->connector->send(new UpdateUser($id, $data));
+        return $this->connector->send(new UpdateDocument($id, $data));
     }
 
     /**
@@ -56,6 +56,6 @@ class UserResource extends BaseResource
      */
     public function delete(int $id): Response
     {
-        return $this->connector->send(new DeleteUser($id));
+        return $this->connector->send(new DeleteDocument($id));
     }
 }
